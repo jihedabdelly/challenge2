@@ -46,13 +46,21 @@ Note: please write one or two lines here describing your solution.
 */
 
 function makeComputer(type, color, weight) {
-  // TODO: Your code here
+  return {
+    type: type,
+    color: color,
+    weight: weight
+  }
 }
+
+var comp1 = makeComputer("Dell", "white", "1.5 kg");
+var comp2 = makeComputer("Toshiba", "black", "1.3 kg");
+var computers = [comp1, comp2];
 
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
-  // TODO: Your code here
+  return "This is a " + computer.type + " computer, it's " + computer.color + " and it weighs " + computer.weight +"."
 }
 
 //=============================================================================
@@ -73,7 +81,11 @@ uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 */
 
 function uppercaseAll(arrayOfStrings) {
-  // TODO: your code here
+  var newArray = [];
+  each(arrayOfStrings, function(element, i) {
+    newArray.push(element.toUpperCase());
+  })
+  return newArray;
 }
 
 //=============================================================================
@@ -112,7 +124,9 @@ var data = [
 ];
 
 function highestPopulation(arrayOfObjects) {
-  // TODO: your code here
+  return filter(arrayOfObjects, function(elm, index) {
+    return elm.population > 500000000;
+  })
 }
 
 //=============================================================================
@@ -132,7 +146,9 @@ Note: please write one or two lines here describing your solution.
 */
 
 function halveAll(numbers) {
-  // your code is here
+  return map(numbers ,function(number, i) {
+    return number / 2;
+  })
 }
 
 //=============================================================================
@@ -148,7 +164,11 @@ values({first : 5, second: 'something' , third : 129}) ==> [5, 'something', 129]
 Note: please write one or two lines here describing your solution.
 */
 function values(obj) {
-  // TODO: your code here
+  var newArr = [];
+  each(obj, function(value, key) {
+    newArr.push(value);
+  })
+  return newArr;
 }
 
 //Good Luck :))
